@@ -14,7 +14,8 @@
   <body>
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Obere Blog</a>
+      <a class="navbar-brand" href="{{
+        url_for('show_entries') }}">Obere Blog</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -32,11 +33,11 @@
          
           {% if not session.logged_in %}
             <li class="nav-item">
-            <a class="nav-link" href="url_for('login') ">Login</a>
+            <a class="nav-link" href="{{ url_for('login') }}">Login</a>
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="url_for('logout') ">Logout</a>
+            <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
           </li>
           {% endif %}
         </ul>
