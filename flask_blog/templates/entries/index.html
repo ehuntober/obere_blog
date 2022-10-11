@@ -1,10 +1,21 @@
  {% extends 'entries/base.html' %}
  {% block content %}  
 
-    <div class="blog-body container" >No Post</div>
-    <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('new_entry') }}">New
-       Post</a>
-       </li>
+    <div class="blog-body container" >
+
+
+       <ul class="list-group list-group-flush">
+        {% for entry in entries %}
+         <div class="card">
+         <div class="card-body">
+         <h5 class="card-title">{{ entry.title }}</h5>
+         </div>
+         </div>
+        {% else %}
+         No Post
+        {% endfor %}
+        </ul>
+
+    </div>
        
 {% endblock %}

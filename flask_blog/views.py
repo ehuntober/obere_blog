@@ -9,7 +9,8 @@ from flask_blog.models import Entry ,db
 def show_entries():
     if not session.get('logged_in'):
         return redirect(url_for('login'))
-    return render_template('entries/index.html')
+    entries = Entry.query.order_by(Entry.id.desc()).all()
+    return render_template('entries/index.html',entries=entries)
 
 @app.route('/entries/new', methods=['GET'])
 def new_entry():
