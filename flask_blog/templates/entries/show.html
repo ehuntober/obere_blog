@@ -1,0 +1,13 @@
+{% extends 'entries/base.html' %} {% block content %}
+
+<div class="container">
+
+<h2>{{ entry.title }}</h2>
+<br>
+{{ entry.text }}
+<br><br>
+Posted at {{ entry.created_at }}
+
+</div>
+
+{% endblock %}
