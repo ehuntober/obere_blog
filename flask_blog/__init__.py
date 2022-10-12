@@ -7,6 +7,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
 
 db.init_app(app)
 
-import flask_blog.views
+from . import views
 
 
